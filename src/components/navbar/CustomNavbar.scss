@@ -1,0 +1,212 @@
+$small-screen: "(max-width : 600px)";
+
+$z-index-overlay: 9999;
+$z-index-nav-btn-container: 10000;
+
+$overlay-background-color: #1b1b1b;
+$overlay-text-color: #fffb22;
+
+$overlay-navigation-container-top: 8%;
+$overlay-navigation-container-left: 10%;
+
+$nav-btn-right-margin: 60px;
+$nav-btn-right-width-height: 40px;
+$nav-btn-top: 14px;
+
+$contact-links-margin-top: 10px;
+$contact-links-font-size: 7vw;
+$contact-links-font-size-small-screen: 10vw;
+
+.overlay {
+  z-index: $z-index-overlay;
+  position: fixed;
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: $overlay-background-color;
+  transition: opacity 0.3s, visibility 0.3s, height 0.6s;
+
+  ul {
+    list-style: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: $overlay-text-color;
+  }
+}
+
+.overlay.show {
+  opacity: 0.96;
+  visibility: visible;
+  height: 102%;
+  width: 102%;
+}
+
+.overlay-about-container,
+.overlay-contact-container {
+  position: relative;
+  top: $overlay-navigation-container-top;
+  left: $overlay-navigation-container-left;
+  color: $overlay-text-color;
+
+  @media #{$small-screen} {
+    text-align: center;
+    left: 0;
+  }
+
+  .title {
+    font-size: 5vw;
+    font-family: "Old Standard TT", serif;
+    text-align: left;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 5px;
+      width: 50%;
+      background-color: $overlay-text-color;
+
+      @media #{$small-screen} {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media #{$small-screen} {
+      font-size: 10vw;
+      text-align: center;
+    }
+  }
+
+  .about-site-overlay {
+    position: relative;
+    margin-top: 30px;
+    font-family: "Old Standard TT", serif;
+    font-size: 2vw;
+    width: 50%;
+
+    a {
+      font-family: "Old Standard TT", serif;
+      background-color: $overlay-text-color;
+      color: $overlay-background-color;
+      font-weight: 900;
+    }
+
+    div {
+      margin-top: 20px;
+      font-size: 1vw;
+    }
+
+    @media #{$small-screen} {
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      font-size: 7vw;
+
+      div {
+        font-size: 4vw;
+      }
+    }
+  }
+
+  .contact-links {
+    position: relative;
+    margin-top: $contact-links-margin-top;
+    font-size: $contact-links-font-size;
+    text-align: center;
+    width: 50%;
+
+    @media #{$small-screen} {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    a {
+      transition: color 0.3s ease;
+
+      @media #{$small-screen} {
+        width: 90%;
+        font-size: $contact-links-font-size-small-screen;
+      }
+
+      &:hover {
+        color: rgb(255, 94, 0);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.nav-btn-container {
+  position: fixed;
+  overflow: hidden;
+  cursor: pointer;
+  top: $nav-btn-top;
+  right: $nav-btn-right-margin;
+  width: $nav-btn-right-width-height;
+  height: $nav-btn-right-width-height;
+  z-index: $z-index-nav-btn-container;
+  mix-blend-mode: exclusion;
+
+  @media #{$small-screen} {
+    top: 8px;
+    right: 15px;
+  }
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  span:nth-child(1) {
+    position: absolute;
+    top: 13px;
+  }
+
+  span:nth-child(2) {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  span:nth-child(3) {
+    position: absolute;
+    top: 25px;
+  }
+}
+
+.nav-btn-clicked {
+  span:nth-child(1) {
+    transform: rotateZ(45deg) translateY(8px);
+    background-color: rgb(255, 251, 34);
+
+    @media #{$small-screen} {
+      top: 18px;
+    }
+  }
+
+  span:nth-child(2) {
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+
+  span:nth-child(3) {
+    transform: rotateZ(-45deg) translateY(-8px);
+    background-color: $overlay-text-color;
+
+    @media #{$small-screen} {
+      top: 30px;
+    }
+  }
+}

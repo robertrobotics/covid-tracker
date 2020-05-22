@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+$small-screen: "(max-width : 960px)";
+
+$card-font-color: #0501fa;
+
+$card-height: 400px;
+$card-width: 300px;
+$card-height-small-screen: 300px;
+$card-width-small-screen: 200px;
+$card-margin: 20px 0;
+$card-border-radius: 10px;
+$card-title-font-size: 1.4em;
+$card-title-font-size-small-screen: 1.2em;
+
+.card-container {
+  position: relative;
+  height: $card-height;
+  width: $card-width;
+  margin: $card-margin;
+  border-radius: $card-border-radius;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: linear-gradient(245deg, #efe504, #c9c104);
+  box-shadow: 50px 50px 100px #a9a303, -50px -50px 100px #ffff05;
+  transition: box-shadow 0.5s ease;
+  @media #{$small-screen} {
+    height: $card-height-small-screen;
+    width: $card-width-small-screen;
+  }
+}
+
+.card-container:hover {
+  box-shadow: 4px 4px 8px #a9a303, -4px -4px 8px #ffff05;
+}
+
+.card-title {
+  position: relative;
+  padding-top: 20px;
+  font-size: $card-title-font-size;
+  padding-bottom: 20px;
+  color: $card-font-color;
+
+  @media #{$small-screen} {
+    font-size: $card-title-font-size-small-screen;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  margin-top: 20px;
+  display: block;
+  height: 2px;
+  width: $card-width;
+  background-color: $card-font-color;
+
+  @media #{$small-screen} {
+    margin-top: 10px;
+    display: block;
+    height: 2px;
+    width: $card-width-small-screen;
+  }
+}
+
+.card-content {
+  color: $card-font-color;
+  position: relative;
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+  align-items: center;
+  height: $card-width;
+
+  @media #{$small-screen} {
+    font-size: 2.3em;
+    justify-content: center;
+    align-items: center;
+    height: $card-width-small-screen;
+  }
+}
+
+.card-footer {
+  position: relative;
+  bottom: 40px;
+  color: $card-font-color;
+  background-color: transparent;
+
+  @media #{$small-screen} {
+    bottom: 20px;
+  }
+}

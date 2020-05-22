@@ -1,0 +1,32 @@
+$text-color: #f7fc00;
+$text-logo-left: 20px;
+$mid-screen: "(max-width : 1280px)";
+$small-screen: "(max-width : 960px)";
+$screen-height-small: "screen and (max-height: 670px)";
+$screen-height-very-small: "screen and (max-height: 600px)";
+$small-screen-landscape: "screen and (orientation: landscape) and (max-height: 400px)";
+$small-not-standard-devices: "screen and (max-width : 1280px) and (min-width: 760px) and (max-height: 1400px) and (min-height: 1000px)";
+
+.app-bar {
+  position: absolute;
+  border-radius: 30px;
+  background: linear-gradient(225deg, #272bef, #2024c9);
+  box-shadow: 40px 40px 80px #181b95, -40px -40px 80px #3035ff;
+  transition: box-shadow 1s ease;
+  width: 100vw;
+
+  &:hover {
+    box-shadow: 50px 50px 100px #181b95, -50px -50px 100px #3035ff;
+  }
+
+  .text-logo {
+    position: absolute;
+    left: $text-logo-left;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+}

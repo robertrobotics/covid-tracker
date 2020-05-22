@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+$screen-height-small: "screen and (max-height: 650px)";
+$small-screen: "(max-width : 960px)";
+$background-color: #2428df;
+$font-stack: "Montserrat";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #ea00ff;
+  color: #00c23a;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: #ea00ff;
+  color: #00c23a;
+  text-shadow: none;
+}
+
+body {
+  position: absolute;
+  overflow-x: hidden;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  font-family: $font-stack;
+  background: $background-color;
+
+  &::-webkit-scrollbar {
+    width: 0.3em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: black;
+    mix-blend-mode: exclusion;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: white;
+    mix-blend-mode: exclusion;
+  }
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+
+  @media #{$small-screen} {
+  }
+}
+
+.covid-country-data-container {
+  position: relative;
+}

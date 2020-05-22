@@ -1,0 +1,46 @@
+$small-screen: "(max-width : 960px)";
+
+$main-color: #eeff00;
+$main-color-hover: #ff5100;
+
+$form-width: 24vw;
+$form-width-small-screen: 70vw;
+
+.selector-div {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  .autocomplete-form {
+    position: relative;
+    width: $form-width;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media #{$small-screen} {
+      width: $form-width-small-screen;
+    }
+
+    .MuiAutocomplete-inputRoot {
+      color: $main-color;
+      border-color: $main-color;
+
+      &:hover .MuiOutlinedInput-notchedOutline {
+        border-color: $main-color-hover;
+      }
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      color: $main-color;
+      border-color: $main-color;
+    }
+
+    .MuiFormLabel-root {
+      color: $main-color;
+    }
+
+    .MuiIconButton-label {
+      color: $main-color;
+    }
+  }
+}

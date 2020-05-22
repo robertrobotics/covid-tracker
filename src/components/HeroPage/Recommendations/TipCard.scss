@@ -1,0 +1,98 @@
+$small-screen-portrait: "screen and (orientation: portrait) and (max-width : 690px)";
+$mid-screen-portrait: "screen and (orientation: portrait) and (min-width : 690px) and (max-width : 960px)";
+$small-screen-landscape: "(orientation: landscape) and (max-height: 400px)";
+$font-color: #ffffff;
+$icon-size: 6vw;
+$text-size: 2vw;
+$hover-tip-cards-color: #82dd5e;
+
+.tip-card-div {
+  position: relative;
+  left: 50%;
+  top: 24vh;
+  transform: translateX(-50%);
+
+  @media #{$mid-screen-portrait} {
+    top: 9vh;
+  }
+
+  @media #{$small-screen-portrait} {
+    top: 10vh;
+  }
+
+  @media #{$small-screen-landscape} {
+    top: 12vh;
+  }
+
+  .tip-icon {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    font-size: $icon-size;
+    color: $font-color;
+    transition: color 0.8s ease;
+
+    @media #{$mid-screen-portrait} {
+      font-size: 8vw;
+      top: 9vh;
+      color: #2428df;
+    }
+
+    @media #{$small-screen-portrait} {
+      font-size: 10vw;
+      color: #2428df;
+    }
+  }
+
+  .tip-text {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    font-size: $text-size;
+    color: $font-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $hover-tip-cards-color;
+      transition: width 0.8s ease;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: $hover-tip-cards-color;
+      transition: width 0.8s ease;
+    }
+
+    @media #{$mid-screen-portrait} {
+      font-size: 3vw;
+      top: 9vh;
+      color: #2428df;
+    }
+
+    @media #{$small-screen-portrait} {
+      font-size: 4vw;
+      color: #2428df;
+    }
+  }
+
+  &:hover {
+    .tip-icon {
+      color: $hover-tip-cards-color;
+    }
+
+    .tip-text::after,
+    .tip-text::before {
+      width: 100%;
+    }
+  }
+}
