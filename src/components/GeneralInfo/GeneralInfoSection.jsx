@@ -32,7 +32,7 @@ export default class GeneralInfoSection extends PureComponent {
   };
 
   async componentDidUpdate(prevProps, prevState) {
-    if (prevState.loading != this.state.loading) {
+    if (prevState.loading !== this.state.loading) {
       const covidData = await fetchSummaryCovidData();
 
       this.setState({

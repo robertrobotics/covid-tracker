@@ -7,10 +7,8 @@ import {
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
 } from "recharts";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import moment from "moment";
 
 export default class TrackChart extends PureComponent {
@@ -28,7 +26,7 @@ export default class TrackChart extends PureComponent {
   }
 
   async componentDidUpdate(previousProps, previousState) {
-    if (previousProps.countryName != this.props.countryName) {
+    if (previousProps.countryName !== this.props.countryName) {
       await this.RefreshCovidData(this.props.countryName);
     }
   }

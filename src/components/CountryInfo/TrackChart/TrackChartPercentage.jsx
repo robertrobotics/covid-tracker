@@ -10,7 +10,6 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import moment from "moment";
 
 export default class TrackChartPercentage extends PureComponent {
@@ -28,7 +27,7 @@ export default class TrackChartPercentage extends PureComponent {
   }
 
   async componentDidUpdate(previousProps, previousState) {
-    if (previousProps.countryName != this.props.countryName) {
+    if (previousProps.countryName !== this.props.countryName) {
       await this.RefreshCovidData(this.props.countryName);
     }
   }

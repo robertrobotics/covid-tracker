@@ -5,10 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
 
 export default class TipCard extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   GetCardIcon = () => {
     return this.props.icon;
   };

@@ -1,11 +1,6 @@
 import React, { PureComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faInstagramSquare,
-  faCodepen,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import "./CustomNavbar.scss";

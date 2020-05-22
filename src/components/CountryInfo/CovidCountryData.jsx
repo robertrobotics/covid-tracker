@@ -30,14 +30,13 @@ export default class CovidCountryData extends PureComponent {
   }
 
   async componentDidUpdate(prevProps, prevState) {
-    if (prevState.loading != this.state.loading) {
+    if (prevState.loading !== this.state.loading) {
       this.fadeIn(".main-country-data-container");
     }
   }
 
   setCountryName = (name) => {
     this.setState({ countryName: name });
-    console.log(`Set Country name is ${this.state.countryName}`);
   };
 
   onCountrySelected = (eventArgs) => {
