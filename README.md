@@ -2,6 +2,8 @@
 
 ## About
 
+`Here you can find deployed application:` https://wonderful-neumann-4f7f67.netlify.app/
+
 **Site has been written as a hobby project.**
 <br>Data shown on this site is being taken
 from [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)](https://github.com/CSSEGISandData/COVID-19)
